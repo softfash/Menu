@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/tvNavigationBarStyle"
+        android:text="点菜"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_discuss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/tvNavigationBarStyle"
+        android:text="评价"
+        app:layout_constraintStart_toEndOf="@+id/tv_order"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/tvNavigationBarStyle"
+        android:text="商家"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintStart_toEndOf="@+id/tv_discuss"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:background = "@drawable/friend_list"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="好友拼单"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_business">
+        <!--        添加2个新建的fragment-->
+        <fragment
+            android:id = "@+id/left"
+            android:name="com.example.menu.LeftFragment"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            tools:layout="@layout/left_layout" />
+
+        <fragment
+            android:id = "@+id/right"
+            android:name="com.example.menu.RightFragment"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            tools:layout="@layout/right_layout" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
